@@ -1,0 +1,1495 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="QL_HOCSINH_THPTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="DANTOC">
+          <Key>
+            <PropertyRef Name="MADANTOC" />
+          </Key>
+          <Property Name="MADANTOC" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="TENDANTOC" Type="nvarchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DIEMSO">
+          <Key>
+            <PropertyRef Name="MAHOCSINH" />
+            <PropertyRef Name="MAMONHOC" />
+            <PropertyRef Name="MAHOCKY" />
+            <PropertyRef Name="MALOP" />
+          </Key>
+          <Property Name="MAHOCSINH" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="MAMONHOC" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="MAHOCKY" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="MALOP" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="DIEMKTMIENG" Type="float" />
+          <Property Name="DIEMKT15PH" Type="float" />
+          <Property Name="DIEMKT45P" Type="float" />
+          <Property Name="DIEMTHICUOIKY" Type="float" />
+          <Property Name="DTB" Type="float" />
+        </EntityType>
+        <EntityType Name="GIAOVIEN">
+          <Key>
+            <PropertyRef Name="MAGIAOVIEN" />
+          </Key>
+          <Property Name="MAGIAOVIEN" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="TENGIAOVIEN" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="MAGIOITINH" Type="int" Nullable="false" />
+          <Property Name="DIACHI" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DIENTHOAI" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="MAMONHOC" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GIOITINH">
+          <Key>
+            <PropertyRef Name="MAGIOITINH" />
+          </Key>
+          <Property Name="MAGIOITINH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TENGIOITINH" Type="nvarchar" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="HANHKIEM">
+          <Key>
+            <PropertyRef Name="MAHANHKIEM" />
+          </Key>
+          <Property Name="MAHANHKIEM" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="TENHANHKIEM" Type="nvarchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HOCKY">
+          <Key>
+            <PropertyRef Name="MAHOCKY" />
+          </Key>
+          <Property Name="MAHOCKY" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="TENHOCKY" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="HESO" Type="int" />
+        </EntityType>
+        <EntityType Name="HOCLUC">
+          <Key>
+            <PropertyRef Name="MAHOCLUC" />
+          </Key>
+          <Property Name="MAHOCLUC" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="TENHOCLUC" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="DIEMCANDUOI" Type="float" Nullable="false" />
+          <Property Name="DIEMCANTREN" Type="float" Nullable="false" />
+          <Property Name="DIEMKHONGCHE" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HOCSINH">
+          <Key>
+            <PropertyRef Name="MAHOCSINH" />
+          </Key>
+          <Property Name="MAHOCSINH" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="HOTENHOCSINH" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="MAGIOITINH" Type="int" Nullable="false" />
+          <Property Name="NGAYSINH" Type="date" Nullable="false" />
+          <Property Name="NOISINH" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MADANTOC" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="MATONGIAO" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="KETQUA">
+          <Key>
+            <PropertyRef Name="MAKETQUA" />
+          </Key>
+          <Property Name="MAKETQUA" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="TENKETQUA" Type="nvarchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="KETQUAHOCKY">
+          <Key>
+            <PropertyRef Name="MAHOCSINH" />
+            <PropertyRef Name="MAHOCKY" />
+            <PropertyRef Name="MALOP" />
+          </Key>
+          <Property Name="MAHOCSINH" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="MAHOCKY" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="MALOP" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="DTB" Type="float" />
+        </EntityType>
+        <EntityType Name="KHOILOP">
+          <Key>
+            <PropertyRef Name="MAKHOI" />
+          </Key>
+          <Property Name="MAKHOI" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="TENKHOILOP" Type="nvarchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LOAINGUOIDUNG">
+          <Key>
+            <PropertyRef Name="MALOAIND" />
+          </Key>
+          <Property Name="MALOAIND" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="TENLOAIND" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LOP">
+          <Key>
+            <PropertyRef Name="MALOP" />
+          </Key>
+          <Property Name="MALOP" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="TENLOP" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="MAKHOI" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="MANAMHOC" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="SISO" Type="int" Nullable="false" />
+          <Property Name="MAGIAOVIENCHUNHIEM" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MONHOC">
+          <Key>
+            <PropertyRef Name="MAMONHOC" />
+          </Key>
+          <Property Name="MAMONHOC" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="TENMONHOC" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="SOTIET" Type="int" Nullable="false" />
+          <Property Name="HESO" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NAMHOC">
+          <Key>
+            <PropertyRef Name="MANAMHOC" />
+          </Key>
+          <Property Name="MANAMHOC" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="TENNAMHOC" Type="nvarchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NGUOIDUNG">
+          <Key>
+            <PropertyRef Name="MANGUOIDUNG" />
+          </Key>
+          <Property Name="MANGUOIDUNG" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="MALOAIND" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="TENDANGNHAP" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="MATKHAU" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PHANCONG">
+          <Key>
+            <PropertyRef Name="STT" />
+          </Key>
+          <Property Name="STT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MANAMHOC" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="MALOP" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="MAMONHOC" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="MAGIAOVIEN" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PHANLOP">
+          <Key>
+            <PropertyRef Name="STT" />
+          </Key>
+          <Property Name="STT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MANAMHOC" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="MALOP" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="MAHOCSINH" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TONGIAO">
+          <Key>
+            <PropertyRef Name="MATONGIAO" />
+          </Key>
+          <Property Name="MATONGIAO" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="TENTONGIAO" Type="nvarchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <Association Name="F_DIEM_HS">
+          <End Role="HOCSINH" Type="Self.HOCSINH" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="DIEMSO" Type="Self.DIEMSO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HOCSINH">
+              <PropertyRef Name="MAHOCSINH" />
+            </Principal>
+            <Dependent Role="DIEMSO">
+              <PropertyRef Name="MAHOCSINH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="F_DIEM_LOP">
+          <End Role="LOP" Type="Self.LOP" Multiplicity="1" />
+          <End Role="DIEMSO" Type="Self.DIEMSO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOP">
+              <PropertyRef Name="MALOP" />
+            </Principal>
+            <Dependent Role="DIEMSO">
+              <PropertyRef Name="MALOP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="F_DIEM_MH">
+          <End Role="MONHOC" Type="Self.MONHOC" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="DIEMSO" Type="Self.DIEMSO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MONHOC">
+              <PropertyRef Name="MAMONHOC" />
+            </Principal>
+            <Dependent Role="DIEMSO">
+              <PropertyRef Name="MAMONHOC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="F_GV_GT">
+          <End Role="GIOITINH" Type="Self.GIOITINH" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="GIAOVIEN" Type="Self.GIAOVIEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GIOITINH">
+              <PropertyRef Name="MAGIOITINH" />
+            </Principal>
+            <Dependent Role="GIAOVIEN">
+              <PropertyRef Name="MAGIOITINH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="F_GV_MH">
+          <End Role="MONHOC" Type="Self.MONHOC" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="GIAOVIEN" Type="Self.GIAOVIEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MONHOC">
+              <PropertyRef Name="MAMONHOC" />
+            </Principal>
+            <Dependent Role="GIAOVIEN">
+              <PropertyRef Name="MAMONHOC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="F_HS_GT">
+          <End Role="GIOITINH" Type="Self.GIOITINH" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="HOCSINH" Type="Self.HOCSINH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GIOITINH">
+              <PropertyRef Name="MAGIOITINH" />
+            </Principal>
+            <Dependent Role="HOCSINH">
+              <PropertyRef Name="MAGIOITINH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="F_HS_TG">
+          <End Role="TONGIAO" Type="Self.TONGIAO" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="HOCSINH" Type="Self.HOCSINH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TONGIAO">
+              <PropertyRef Name="MATONGIAO" />
+            </Principal>
+            <Dependent Role="HOCSINH">
+              <PropertyRef Name="MATONGIAO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="F_KETQUAHOCKY_HS">
+          <End Role="HOCSINH" Type="Self.HOCSINH" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="KETQUAHOCKY" Type="Self.KETQUAHOCKY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HOCSINH">
+              <PropertyRef Name="MAHOCSINH" />
+            </Principal>
+            <Dependent Role="KETQUAHOCKY">
+              <PropertyRef Name="MAHOCSINH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="F_KETQUAHOCKY_LOP">
+          <End Role="LOP" Type="Self.LOP" Multiplicity="1" />
+          <End Role="KETQUAHOCKY" Type="Self.KETQUAHOCKY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOP">
+              <PropertyRef Name="MALOP" />
+            </Principal>
+            <Dependent Role="KETQUAHOCKY">
+              <PropertyRef Name="MALOP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="F_LOP_GIAOVIEN">
+          <End Role="GIAOVIEN" Type="Self.GIAOVIEN" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="LOP" Type="Self.LOP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GIAOVIEN">
+              <PropertyRef Name="MAGIAOVIEN" />
+            </Principal>
+            <Dependent Role="LOP">
+              <PropertyRef Name="MAGIAOVIENCHUNHIEM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="F_LOP_KHOILOP">
+          <End Role="KHOILOP" Type="Self.KHOILOP" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="LOP" Type="Self.LOP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHOILOP">
+              <PropertyRef Name="MAKHOI" />
+            </Principal>
+            <Dependent Role="LOP">
+              <PropertyRef Name="MAKHOI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="F_LOP_NAMHOC">
+          <End Role="NAMHOC" Type="Self.NAMHOC" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="LOP" Type="Self.LOP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NAMHOC">
+              <PropertyRef Name="MANAMHOC" />
+            </Principal>
+            <Dependent Role="LOP">
+              <PropertyRef Name="MANAMHOC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DIEMSO_HOCKY">
+          <End Role="HOCKY" Type="Self.HOCKY" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="DIEMSO" Type="Self.DIEMSO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HOCKY">
+              <PropertyRef Name="MAHOCKY" />
+            </Principal>
+            <Dependent Role="DIEMSO">
+              <PropertyRef Name="MAHOCKY" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HS_DT">
+          <End Role="DANTOC" Type="Self.DANTOC" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="HOCSINH" Type="Self.HOCSINH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DANTOC">
+              <PropertyRef Name="MADANTOC" />
+            </Principal>
+            <Dependent Role="HOCSINH">
+              <PropertyRef Name="MADANTOC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NGUOIDUNG_LOAINGUOIDUNG">
+          <End Role="LOAINGUOIDUNG" Type="Self.LOAINGUOIDUNG" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="NGUOIDUNG" Type="Self.NGUOIDUNG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOAINGUOIDUNG">
+              <PropertyRef Name="MALOAIND" />
+            </Principal>
+            <Dependent Role="NGUOIDUNG">
+              <PropertyRef Name="MALOAIND" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Fk_PHANCONG_NAMHOC">
+          <End Role="NAMHOC" Type="Self.NAMHOC" Multiplicity="1" />
+          <End Role="PHANCONG" Type="Self.PHANCONG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NAMHOC">
+              <PropertyRef Name="MANAMHOC" />
+            </Principal>
+            <Dependent Role="PHANCONG">
+              <PropertyRef Name="MANAMHOC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PHANLOP_LOP">
+          <End Role="LOP" Type="Self.LOP" Multiplicity="1" />
+          <End Role="PHANLOP" Type="Self.PHANLOP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOP">
+              <PropertyRef Name="MALOP" />
+            </Principal>
+            <Dependent Role="PHANLOP">
+              <PropertyRef Name="MALOP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PL_HS">
+          <End Role="HOCSINH" Type="Self.HOCSINH" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PHANLOP" Type="Self.PHANLOP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HOCSINH">
+              <PropertyRef Name="MAHOCSINH" />
+            </Principal>
+            <Dependent Role="PHANLOP">
+              <PropertyRef Name="MAHOCSINH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PL_LOP">
+          <End Role="LOP" Type="Self.LOP" Multiplicity="1" />
+          <End Role="PHANLOP" Type="Self.PHANLOP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOP">
+              <PropertyRef Name="MALOP" />
+            </Principal>
+            <Dependent Role="PHANLOP">
+              <PropertyRef Name="MALOP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PL_NAMHOC">
+          <End Role="NAMHOC" Type="Self.NAMHOC" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PHANLOP" Type="Self.PHANLOP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NAMHOC">
+              <PropertyRef Name="MANAMHOC" />
+            </Principal>
+            <Dependent Role="PHANLOP">
+              <PropertyRef Name="MANAMHOC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="P_PC_GIAOVIEN">
+          <End Role="GIAOVIEN" Type="Self.GIAOVIEN" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PHANCONG" Type="Self.PHANCONG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GIAOVIEN">
+              <PropertyRef Name="MAGIAOVIEN" />
+            </Principal>
+            <Dependent Role="PHANCONG">
+              <PropertyRef Name="MAGIAOVIEN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="P_PC_LOP">
+          <End Role="LOP" Type="Self.LOP" Multiplicity="1" />
+          <End Role="PHANCONG" Type="Self.PHANCONG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOP">
+              <PropertyRef Name="MALOP" />
+            </Principal>
+            <Dependent Role="PHANCONG">
+              <PropertyRef Name="MALOP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="P_PC_MONHOC">
+          <End Role="MONHOC" Type="Self.MONHOC" Multiplicity="1" />
+          <End Role="PHANCONG" Type="Self.PHANCONG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MONHOC">
+              <PropertyRef Name="MAMONHOC" />
+            </Principal>
+            <Dependent Role="PHANCONG">
+              <PropertyRef Name="MAMONHOC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="QL_HOCSINH_THPTModelStoreContainer">
+          <EntitySet Name="DANTOC" EntityType="Self.DANTOC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DIEMSO" EntityType="Self.DIEMSO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GIAOVIEN" EntityType="Self.GIAOVIEN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GIOITINH" EntityType="Self.GIOITINH" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HANHKIEM" EntityType="Self.HANHKIEM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HOCKY" EntityType="Self.HOCKY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HOCLUC" EntityType="Self.HOCLUC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HOCSINH" EntityType="Self.HOCSINH" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KETQUA" EntityType="Self.KETQUA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KETQUAHOCKY" EntityType="Self.KETQUAHOCKY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KHOILOP" EntityType="Self.KHOILOP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LOAINGUOIDUNG" EntityType="Self.LOAINGUOIDUNG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LOP" EntityType="Self.LOP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MONHOC" EntityType="Self.MONHOC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NAMHOC" EntityType="Self.NAMHOC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NGUOIDUNG" EntityType="Self.NGUOIDUNG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PHANCONG" EntityType="Self.PHANCONG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PHANLOP" EntityType="Self.PHANLOP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TONGIAO" EntityType="Self.TONGIAO" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="F_DIEM_HS" Association="Self.F_DIEM_HS">
+            <End Role="HOCSINH" EntitySet="HOCSINH" />
+            <End Role="DIEMSO" EntitySet="DIEMSO" />
+          </AssociationSet>
+          <AssociationSet Name="F_DIEM_LOP" Association="Self.F_DIEM_LOP">
+            <End Role="LOP" EntitySet="LOP" />
+            <End Role="DIEMSO" EntitySet="DIEMSO" />
+          </AssociationSet>
+          <AssociationSet Name="F_DIEM_MH" Association="Self.F_DIEM_MH">
+            <End Role="MONHOC" EntitySet="MONHOC" />
+            <End Role="DIEMSO" EntitySet="DIEMSO" />
+          </AssociationSet>
+          <AssociationSet Name="F_GV_GT" Association="Self.F_GV_GT">
+            <End Role="GIOITINH" EntitySet="GIOITINH" />
+            <End Role="GIAOVIEN" EntitySet="GIAOVIEN" />
+          </AssociationSet>
+          <AssociationSet Name="F_GV_MH" Association="Self.F_GV_MH">
+            <End Role="MONHOC" EntitySet="MONHOC" />
+            <End Role="GIAOVIEN" EntitySet="GIAOVIEN" />
+          </AssociationSet>
+          <AssociationSet Name="F_HS_GT" Association="Self.F_HS_GT">
+            <End Role="GIOITINH" EntitySet="GIOITINH" />
+            <End Role="HOCSINH" EntitySet="HOCSINH" />
+          </AssociationSet>
+          <AssociationSet Name="F_HS_TG" Association="Self.F_HS_TG">
+            <End Role="TONGIAO" EntitySet="TONGIAO" />
+            <End Role="HOCSINH" EntitySet="HOCSINH" />
+          </AssociationSet>
+          <AssociationSet Name="F_KETQUAHOCKY_HS" Association="Self.F_KETQUAHOCKY_HS">
+            <End Role="HOCSINH" EntitySet="HOCSINH" />
+            <End Role="KETQUAHOCKY" EntitySet="KETQUAHOCKY" />
+          </AssociationSet>
+          <AssociationSet Name="F_KETQUAHOCKY_LOP" Association="Self.F_KETQUAHOCKY_LOP">
+            <End Role="LOP" EntitySet="LOP" />
+            <End Role="KETQUAHOCKY" EntitySet="KETQUAHOCKY" />
+          </AssociationSet>
+          <AssociationSet Name="F_LOP_GIAOVIEN" Association="Self.F_LOP_GIAOVIEN">
+            <End Role="GIAOVIEN" EntitySet="GIAOVIEN" />
+            <End Role="LOP" EntitySet="LOP" />
+          </AssociationSet>
+          <AssociationSet Name="F_LOP_KHOILOP" Association="Self.F_LOP_KHOILOP">
+            <End Role="KHOILOP" EntitySet="KHOILOP" />
+            <End Role="LOP" EntitySet="LOP" />
+          </AssociationSet>
+          <AssociationSet Name="F_LOP_NAMHOC" Association="Self.F_LOP_NAMHOC">
+            <End Role="NAMHOC" EntitySet="NAMHOC" />
+            <End Role="LOP" EntitySet="LOP" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DIEMSO_HOCKY" Association="Self.FK_DIEMSO_HOCKY">
+            <End Role="HOCKY" EntitySet="HOCKY" />
+            <End Role="DIEMSO" EntitySet="DIEMSO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HS_DT" Association="Self.FK_HS_DT">
+            <End Role="DANTOC" EntitySet="DANTOC" />
+            <End Role="HOCSINH" EntitySet="HOCSINH" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NGUOIDUNG_LOAINGUOIDUNG" Association="Self.FK_NGUOIDUNG_LOAINGUOIDUNG">
+            <End Role="LOAINGUOIDUNG" EntitySet="LOAINGUOIDUNG" />
+            <End Role="NGUOIDUNG" EntitySet="NGUOIDUNG" />
+          </AssociationSet>
+          <AssociationSet Name="Fk_PHANCONG_NAMHOC" Association="Self.Fk_PHANCONG_NAMHOC">
+            <End Role="NAMHOC" EntitySet="NAMHOC" />
+            <End Role="PHANCONG" EntitySet="PHANCONG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PHANLOP_LOP" Association="Self.FK_PHANLOP_LOP">
+            <End Role="LOP" EntitySet="LOP" />
+            <End Role="PHANLOP" EntitySet="PHANLOP" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PL_HS" Association="Self.FK_PL_HS">
+            <End Role="HOCSINH" EntitySet="HOCSINH" />
+            <End Role="PHANLOP" EntitySet="PHANLOP" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PL_LOP" Association="Self.FK_PL_LOP">
+            <End Role="LOP" EntitySet="LOP" />
+            <End Role="PHANLOP" EntitySet="PHANLOP" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PL_NAMHOC" Association="Self.FK_PL_NAMHOC">
+            <End Role="NAMHOC" EntitySet="NAMHOC" />
+            <End Role="PHANLOP" EntitySet="PHANLOP" />
+          </AssociationSet>
+          <AssociationSet Name="P_PC_GIAOVIEN" Association="Self.P_PC_GIAOVIEN">
+            <End Role="GIAOVIEN" EntitySet="GIAOVIEN" />
+            <End Role="PHANCONG" EntitySet="PHANCONG" />
+          </AssociationSet>
+          <AssociationSet Name="P_PC_LOP" Association="Self.P_PC_LOP">
+            <End Role="LOP" EntitySet="LOP" />
+            <End Role="PHANCONG" EntitySet="PHANCONG" />
+          </AssociationSet>
+          <AssociationSet Name="P_PC_MONHOC" Association="Self.P_PC_MONHOC">
+            <End Role="MONHOC" EntitySet="MONHOC" />
+            <End Role="PHANCONG" EntitySet="PHANCONG" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="QL_HOCSINH_THPTModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="DANTOC">
+          <Key>
+            <PropertyRef Name="MADANTOC" />
+          </Key>
+          <Property Name="MADANTOC" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TENDANTOC" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="HOCSINHs" Relationship="Self.FK_HS_DT" FromRole="DANTOC" ToRole="HOCSINH" />
+        </EntityType>
+        <EntityType Name="GIAOVIEN">
+          <Key>
+            <PropertyRef Name="MAGIAOVIEN" />
+          </Key>
+          <Property Name="MAGIAOVIEN" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TENGIAOVIEN" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MAGIOITINH" Type="Int32" Nullable="false" />
+          <Property Name="DIACHI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DIENTHOAI" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MAMONHOC" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="GIOITINH" Relationship="Self.F_GV_GT" FromRole="GIAOVIEN" ToRole="GIOITINH" />
+          <NavigationProperty Name="MONHOC" Relationship="Self.F_GV_MH" FromRole="GIAOVIEN" ToRole="MONHOC" />
+          <NavigationProperty Name="LOPs" Relationship="Self.F_LOP_GIAOVIEN" FromRole="GIAOVIEN" ToRole="LOP" />
+          <NavigationProperty Name="PHANCONGs" Relationship="Self.P_PC_GIAOVIEN" FromRole="GIAOVIEN" ToRole="PHANCONG" />
+        </EntityType>
+        <EntityType Name="GIOITINH">
+          <Key>
+            <PropertyRef Name="MAGIOITINH" />
+          </Key>
+          <Property Name="MAGIOITINH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TENGIOITINH" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="GIAOVIENs" Relationship="Self.F_GV_GT" FromRole="GIOITINH" ToRole="GIAOVIEN" />
+          <NavigationProperty Name="HOCSINHs" Relationship="Self.F_HS_GT" FromRole="GIOITINH" ToRole="HOCSINH" />
+        </EntityType>
+        <EntityType Name="HANHKIEM">
+          <Key>
+            <PropertyRef Name="MAHANHKIEM" />
+          </Key>
+          <Property Name="MAHANHKIEM" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TENHANHKIEM" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HOCKY">
+          <Key>
+            <PropertyRef Name="MAHOCKY" />
+          </Key>
+          <Property Name="MAHOCKY" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TENHOCKY" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HESO" Type="Int32" />
+          <NavigationProperty Name="DIEMSOes" Relationship="QL_HOCSINH_THPTModel.FK_DIEMSO_HOCKY" FromRole="HOCKY" ToRole="DIEMSO" />
+        </EntityType>
+        <EntityType Name="HOCLUC">
+          <Key>
+            <PropertyRef Name="MAHOCLUC" />
+          </Key>
+          <Property Name="MAHOCLUC" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TENHOCLUC" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DIEMCANDUOI" Type="Double" Nullable="false" />
+          <Property Name="DIEMCANTREN" Type="Double" Nullable="false" />
+          <Property Name="DIEMKHONGCHE" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HOCSINH">
+          <Key>
+            <PropertyRef Name="MAHOCSINH" />
+          </Key>
+          <Property Name="MAHOCSINH" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="HOTENHOCSINH" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MAGIOITINH" Type="Int32" Nullable="false" />
+          <Property Name="NGAYSINH" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="NOISINH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MADANTOC" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MATONGIAO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="DANTOC" Relationship="Self.FK_HS_DT" FromRole="HOCSINH" ToRole="DANTOC" />
+          <NavigationProperty Name="GIOITINH" Relationship="Self.F_HS_GT" FromRole="HOCSINH" ToRole="GIOITINH" />
+          <NavigationProperty Name="TONGIAO" Relationship="Self.F_HS_TG" FromRole="HOCSINH" ToRole="TONGIAO" />
+          <NavigationProperty Name="PHANLOPs" Relationship="Self.FK_PL_HS" FromRole="HOCSINH" ToRole="PHANLOP" />
+          <NavigationProperty Name="DIEMSOes" Relationship="QL_HOCSINH_THPTModel.F_DIEM_HS" FromRole="HOCSINH" ToRole="DIEMSO" />
+          <NavigationProperty Name="KETQUAHOCKies" Relationship="QL_HOCSINH_THPTModel.F_KETQUAHOCKY_HS" FromRole="HOCSINH" ToRole="KETQUAHOCKY" />
+        </EntityType>
+        <EntityType Name="KETQUA">
+          <Key>
+            <PropertyRef Name="MAKETQUA" />
+          </Key>
+          <Property Name="MAKETQUA" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TENKETQUA" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="KHOILOP">
+          <Key>
+            <PropertyRef Name="MAKHOI" />
+          </Key>
+          <Property Name="MAKHOI" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TENKHOILOP" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="LOPs" Relationship="Self.F_LOP_KHOILOP" FromRole="KHOILOP" ToRole="LOP" />
+        </EntityType>
+        <EntityType Name="LOAINGUOIDUNG">
+          <Key>
+            <PropertyRef Name="MALOAIND" />
+          </Key>
+          <Property Name="MALOAIND" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TENLOAIND" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="NGUOIDUNGs" Relationship="Self.FK_NGUOIDUNG_LOAINGUOIDUNG" FromRole="LOAINGUOIDUNG" ToRole="NGUOIDUNG" />
+        </EntityType>
+        <EntityType Name="LOP">
+          <Key>
+            <PropertyRef Name="MALOP" />
+          </Key>
+          <Property Name="MALOP" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TENLOP" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MAKHOI" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MANAMHOC" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SISO" Type="Int32" Nullable="false" />
+          <Property Name="MAGIAOVIENCHUNHIEM" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="GIAOVIEN" Relationship="Self.F_LOP_GIAOVIEN" FromRole="LOP" ToRole="GIAOVIEN" />
+          <NavigationProperty Name="KHOILOP" Relationship="Self.F_LOP_KHOILOP" FromRole="LOP" ToRole="KHOILOP" />
+          <NavigationProperty Name="NAMHOC" Relationship="Self.F_LOP_NAMHOC" FromRole="LOP" ToRole="NAMHOC" />
+          <NavigationProperty Name="PHANLOPs" Relationship="Self.FK_PHANLOP_LOP" FromRole="LOP" ToRole="PHANLOP" />
+          <NavigationProperty Name="PHANLOPs1" Relationship="Self.FK_PL_LOP" FromRole="LOP" ToRole="PHANLOP" />
+          <NavigationProperty Name="PHANCONGs" Relationship="Self.P_PC_LOP" FromRole="LOP" ToRole="PHANCONG" />
+          <NavigationProperty Name="DIEMSOes" Relationship="QL_HOCSINH_THPTModel.F_DIEM_LOP" FromRole="LOP" ToRole="DIEMSO" />
+          <NavigationProperty Name="KETQUAHOCKies" Relationship="QL_HOCSINH_THPTModel.F_KETQUAHOCKY_LOP" FromRole="LOP" ToRole="KETQUAHOCKY" />
+        </EntityType>
+        <EntityType Name="MONHOC">
+          <Key>
+            <PropertyRef Name="MAMONHOC" />
+          </Key>
+          <Property Name="MAMONHOC" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TENMONHOC" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SOTIET" Type="Int32" Nullable="false" />
+          <Property Name="HESO" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="GIAOVIENs" Relationship="Self.F_GV_MH" FromRole="MONHOC" ToRole="GIAOVIEN" />
+          <NavigationProperty Name="PHANCONGs" Relationship="Self.P_PC_MONHOC" FromRole="MONHOC" ToRole="PHANCONG" />
+          <NavigationProperty Name="DIEMSOes" Relationship="QL_HOCSINH_THPTModel.F_DIEM_MH" FromRole="MONHOC" ToRole="DIEMSO" />
+        </EntityType>
+        <EntityType Name="NAMHOC">
+          <Key>
+            <PropertyRef Name="MANAMHOC" />
+          </Key>
+          <Property Name="MANAMHOC" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TENNAMHOC" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="LOPs" Relationship="Self.F_LOP_NAMHOC" FromRole="NAMHOC" ToRole="LOP" />
+          <NavigationProperty Name="PHANCONGs" Relationship="Self.Fk_PHANCONG_NAMHOC" FromRole="NAMHOC" ToRole="PHANCONG" />
+          <NavigationProperty Name="PHANLOPs" Relationship="Self.FK_PL_NAMHOC" FromRole="NAMHOC" ToRole="PHANLOP" />
+        </EntityType>
+        <EntityType Name="NGUOIDUNG">
+          <Key>
+            <PropertyRef Name="MANGUOIDUNG" />
+          </Key>
+          <Property Name="MANGUOIDUNG" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MALOAIND" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TENDANGNHAP" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MATKHAU" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="LOAINGUOIDUNG" Relationship="Self.FK_NGUOIDUNG_LOAINGUOIDUNG" FromRole="NGUOIDUNG" ToRole="LOAINGUOIDUNG" />
+        </EntityType>
+        <EntityType Name="PHANCONG">
+          <Key>
+            <PropertyRef Name="STT" />
+          </Key>
+          <Property Name="STT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MANAMHOC" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MALOP" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MAMONHOC" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MAGIAOVIEN" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="GIAOVIEN" Relationship="Self.P_PC_GIAOVIEN" FromRole="PHANCONG" ToRole="GIAOVIEN" />
+          <NavigationProperty Name="LOP" Relationship="Self.P_PC_LOP" FromRole="PHANCONG" ToRole="LOP" />
+          <NavigationProperty Name="MONHOC" Relationship="Self.P_PC_MONHOC" FromRole="PHANCONG" ToRole="MONHOC" />
+          <NavigationProperty Name="NAMHOC" Relationship="Self.Fk_PHANCONG_NAMHOC" FromRole="PHANCONG" ToRole="NAMHOC" />
+        </EntityType>
+        <EntityType Name="PHANLOP">
+          <Key>
+            <PropertyRef Name="STT" />
+          </Key>
+          <Property Name="STT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MANAMHOC" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MALOP" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MAHOCSINH" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="HOCSINH" Relationship="Self.FK_PL_HS" FromRole="PHANLOP" ToRole="HOCSINH" />
+          <NavigationProperty Name="LOP" Relationship="Self.FK_PHANLOP_LOP" FromRole="PHANLOP" ToRole="LOP" />
+          <NavigationProperty Name="LOP1" Relationship="Self.FK_PL_LOP" FromRole="PHANLOP" ToRole="LOP" />
+          <NavigationProperty Name="NAMHOC" Relationship="Self.FK_PL_NAMHOC" FromRole="PHANLOP" ToRole="NAMHOC" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TONGIAO">
+          <Key>
+            <PropertyRef Name="MATONGIAO" />
+          </Key>
+          <Property Name="MATONGIAO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TENTONGIAO" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="HOCSINHs" Relationship="Self.F_HS_TG" FromRole="TONGIAO" ToRole="HOCSINH" />
+        </EntityType>
+        <Association Name="FK_HS_DT">
+          <End Role="DANTOC" Type="Self.DANTOC" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="HOCSINH" Type="Self.HOCSINH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DANTOC">
+              <PropertyRef Name="MADANTOC" />
+            </Principal>
+            <Dependent Role="HOCSINH">
+              <PropertyRef Name="MADANTOC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="F_GV_GT">
+          <End Role="GIOITINH" Type="Self.GIOITINH" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="GIAOVIEN" Type="Self.GIAOVIEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GIOITINH">
+              <PropertyRef Name="MAGIOITINH" />
+            </Principal>
+            <Dependent Role="GIAOVIEN">
+              <PropertyRef Name="MAGIOITINH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="F_GV_MH">
+          <End Role="MONHOC" Type="Self.MONHOC" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="GIAOVIEN" Type="Self.GIAOVIEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MONHOC">
+              <PropertyRef Name="MAMONHOC" />
+            </Principal>
+            <Dependent Role="GIAOVIEN">
+              <PropertyRef Name="MAMONHOC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="F_LOP_GIAOVIEN">
+          <End Role="GIAOVIEN" Type="Self.GIAOVIEN" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="LOP" Type="Self.LOP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GIAOVIEN">
+              <PropertyRef Name="MAGIAOVIEN" />
+            </Principal>
+            <Dependent Role="LOP">
+              <PropertyRef Name="MAGIAOVIENCHUNHIEM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="P_PC_GIAOVIEN">
+          <End Role="GIAOVIEN" Type="Self.GIAOVIEN" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PHANCONG" Type="Self.PHANCONG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GIAOVIEN">
+              <PropertyRef Name="MAGIAOVIEN" />
+            </Principal>
+            <Dependent Role="PHANCONG">
+              <PropertyRef Name="MAGIAOVIEN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="F_HS_GT">
+          <End Role="GIOITINH" Type="Self.GIOITINH" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="HOCSINH" Type="Self.HOCSINH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GIOITINH">
+              <PropertyRef Name="MAGIOITINH" />
+            </Principal>
+            <Dependent Role="HOCSINH">
+              <PropertyRef Name="MAGIOITINH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="F_HS_TG">
+          <End Role="TONGIAO" Type="Self.TONGIAO" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="HOCSINH" Type="Self.HOCSINH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TONGIAO">
+              <PropertyRef Name="MATONGIAO" />
+            </Principal>
+            <Dependent Role="HOCSINH">
+              <PropertyRef Name="MATONGIAO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PL_HS">
+          <End Role="HOCSINH" Type="Self.HOCSINH" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PHANLOP" Type="Self.PHANLOP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HOCSINH">
+              <PropertyRef Name="MAHOCSINH" />
+            </Principal>
+            <Dependent Role="PHANLOP">
+              <PropertyRef Name="MAHOCSINH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="F_LOP_KHOILOP">
+          <End Role="KHOILOP" Type="Self.KHOILOP" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="LOP" Type="Self.LOP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHOILOP">
+              <PropertyRef Name="MAKHOI" />
+            </Principal>
+            <Dependent Role="LOP">
+              <PropertyRef Name="MAKHOI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NGUOIDUNG_LOAINGUOIDUNG">
+          <End Role="LOAINGUOIDUNG" Type="Self.LOAINGUOIDUNG" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="NGUOIDUNG" Type="Self.NGUOIDUNG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOAINGUOIDUNG">
+              <PropertyRef Name="MALOAIND" />
+            </Principal>
+            <Dependent Role="NGUOIDUNG">
+              <PropertyRef Name="MALOAIND" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="F_LOP_NAMHOC">
+          <End Role="NAMHOC" Type="Self.NAMHOC" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="LOP" Type="Self.LOP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NAMHOC">
+              <PropertyRef Name="MANAMHOC" />
+            </Principal>
+            <Dependent Role="LOP">
+              <PropertyRef Name="MANAMHOC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PHANLOP_LOP">
+          <End Role="LOP" Type="Self.LOP" Multiplicity="1" />
+          <End Role="PHANLOP" Type="Self.PHANLOP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOP">
+              <PropertyRef Name="MALOP" />
+            </Principal>
+            <Dependent Role="PHANLOP">
+              <PropertyRef Name="MALOP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PL_LOP">
+          <End Role="LOP" Type="Self.LOP" Multiplicity="1" />
+          <End Role="PHANLOP" Type="Self.PHANLOP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOP">
+              <PropertyRef Name="MALOP" />
+            </Principal>
+            <Dependent Role="PHANLOP">
+              <PropertyRef Name="MALOP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="P_PC_LOP">
+          <End Role="LOP" Type="Self.LOP" Multiplicity="1" />
+          <End Role="PHANCONG" Type="Self.PHANCONG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOP">
+              <PropertyRef Name="MALOP" />
+            </Principal>
+            <Dependent Role="PHANCONG">
+              <PropertyRef Name="MALOP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="P_PC_MONHOC">
+          <End Role="MONHOC" Type="Self.MONHOC" Multiplicity="1" />
+          <End Role="PHANCONG" Type="Self.PHANCONG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MONHOC">
+              <PropertyRef Name="MAMONHOC" />
+            </Principal>
+            <Dependent Role="PHANCONG">
+              <PropertyRef Name="MAMONHOC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Fk_PHANCONG_NAMHOC">
+          <End Role="NAMHOC" Type="Self.NAMHOC" Multiplicity="1" />
+          <End Role="PHANCONG" Type="Self.PHANCONG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NAMHOC">
+              <PropertyRef Name="MANAMHOC" />
+            </Principal>
+            <Dependent Role="PHANCONG">
+              <PropertyRef Name="MANAMHOC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PL_NAMHOC">
+          <End Role="NAMHOC" Type="Self.NAMHOC" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PHANLOP" Type="Self.PHANLOP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NAMHOC">
+              <PropertyRef Name="MANAMHOC" />
+            </Principal>
+            <Dependent Role="PHANLOP">
+              <PropertyRef Name="MANAMHOC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="QL_HOCSINH_THPTEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DANTOCs" EntityType="Self.DANTOC" />
+          <EntitySet Name="GIAOVIENs" EntityType="Self.GIAOVIEN" />
+          <EntitySet Name="GIOITINHs" EntityType="Self.GIOITINH" />
+          <EntitySet Name="HANHKIEMs" EntityType="Self.HANHKIEM" />
+          <EntitySet Name="HOCKies" EntityType="Self.HOCKY" />
+          <EntitySet Name="HOCLUCs" EntityType="Self.HOCLUC" />
+          <EntitySet Name="HOCSINHs" EntityType="Self.HOCSINH" />
+          <EntitySet Name="KETQUAs" EntityType="Self.KETQUA" />
+          <EntitySet Name="KHOILOPs" EntityType="Self.KHOILOP" />
+          <EntitySet Name="LOAINGUOIDUNGs" EntityType="Self.LOAINGUOIDUNG" />
+          <EntitySet Name="LOPs" EntityType="Self.LOP" />
+          <EntitySet Name="MONHOCs" EntityType="Self.MONHOC" />
+          <EntitySet Name="NAMHOCs" EntityType="Self.NAMHOC" />
+          <EntitySet Name="NGUOIDUNGs" EntityType="Self.NGUOIDUNG" />
+          <EntitySet Name="PHANCONGs" EntityType="Self.PHANCONG" />
+          <EntitySet Name="PHANLOPs" EntityType="Self.PHANLOP" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="TONGIAOs" EntityType="Self.TONGIAO" />
+          <AssociationSet Name="FK_HS_DT" Association="Self.FK_HS_DT">
+            <End Role="DANTOC" EntitySet="DANTOCs" />
+            <End Role="HOCSINH" EntitySet="HOCSINHs" />
+          </AssociationSet>
+          <AssociationSet Name="F_GV_GT" Association="Self.F_GV_GT">
+            <End Role="GIOITINH" EntitySet="GIOITINHs" />
+            <End Role="GIAOVIEN" EntitySet="GIAOVIENs" />
+          </AssociationSet>
+          <AssociationSet Name="F_GV_MH" Association="Self.F_GV_MH">
+            <End Role="MONHOC" EntitySet="MONHOCs" />
+            <End Role="GIAOVIEN" EntitySet="GIAOVIENs" />
+          </AssociationSet>
+          <AssociationSet Name="F_LOP_GIAOVIEN" Association="Self.F_LOP_GIAOVIEN">
+            <End Role="GIAOVIEN" EntitySet="GIAOVIENs" />
+            <End Role="LOP" EntitySet="LOPs" />
+          </AssociationSet>
+          <AssociationSet Name="P_PC_GIAOVIEN" Association="Self.P_PC_GIAOVIEN">
+            <End Role="GIAOVIEN" EntitySet="GIAOVIENs" />
+            <End Role="PHANCONG" EntitySet="PHANCONGs" />
+          </AssociationSet>
+          <AssociationSet Name="F_HS_GT" Association="Self.F_HS_GT">
+            <End Role="GIOITINH" EntitySet="GIOITINHs" />
+            <End Role="HOCSINH" EntitySet="HOCSINHs" />
+          </AssociationSet>
+          <AssociationSet Name="F_HS_TG" Association="Self.F_HS_TG">
+            <End Role="TONGIAO" EntitySet="TONGIAOs" />
+            <End Role="HOCSINH" EntitySet="HOCSINHs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PL_HS" Association="Self.FK_PL_HS">
+            <End Role="HOCSINH" EntitySet="HOCSINHs" />
+            <End Role="PHANLOP" EntitySet="PHANLOPs" />
+          </AssociationSet>
+          <AssociationSet Name="F_LOP_KHOILOP" Association="Self.F_LOP_KHOILOP">
+            <End Role="KHOILOP" EntitySet="KHOILOPs" />
+            <End Role="LOP" EntitySet="LOPs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NGUOIDUNG_LOAINGUOIDUNG" Association="Self.FK_NGUOIDUNG_LOAINGUOIDUNG">
+            <End Role="LOAINGUOIDUNG" EntitySet="LOAINGUOIDUNGs" />
+            <End Role="NGUOIDUNG" EntitySet="NGUOIDUNGs" />
+          </AssociationSet>
+          <AssociationSet Name="F_LOP_NAMHOC" Association="Self.F_LOP_NAMHOC">
+            <End Role="NAMHOC" EntitySet="NAMHOCs" />
+            <End Role="LOP" EntitySet="LOPs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PHANLOP_LOP" Association="Self.FK_PHANLOP_LOP">
+            <End Role="LOP" EntitySet="LOPs" />
+            <End Role="PHANLOP" EntitySet="PHANLOPs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PL_LOP" Association="Self.FK_PL_LOP">
+            <End Role="LOP" EntitySet="LOPs" />
+            <End Role="PHANLOP" EntitySet="PHANLOPs" />
+          </AssociationSet>
+          <AssociationSet Name="P_PC_LOP" Association="Self.P_PC_LOP">
+            <End Role="LOP" EntitySet="LOPs" />
+            <End Role="PHANCONG" EntitySet="PHANCONGs" />
+          </AssociationSet>
+          <AssociationSet Name="P_PC_MONHOC" Association="Self.P_PC_MONHOC">
+            <End Role="MONHOC" EntitySet="MONHOCs" />
+            <End Role="PHANCONG" EntitySet="PHANCONGs" />
+          </AssociationSet>
+          <AssociationSet Name="Fk_PHANCONG_NAMHOC" Association="Self.Fk_PHANCONG_NAMHOC">
+            <End Role="NAMHOC" EntitySet="NAMHOCs" />
+            <End Role="PHANCONG" EntitySet="PHANCONGs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PL_NAMHOC" Association="Self.FK_PL_NAMHOC">
+            <End Role="NAMHOC" EntitySet="NAMHOCs" />
+            <End Role="PHANLOP" EntitySet="PHANLOPs" />
+          </AssociationSet>
+          <EntitySet Name="DIEMSOes" EntityType="QL_HOCSINH_THPTModel.DIEMSO" />
+          <EntitySet Name="KETQUAHOCKies" EntityType="QL_HOCSINH_THPTModel.KETQUAHOCKY" />
+          <AssociationSet Name="F_DIEM_HS" Association="QL_HOCSINH_THPTModel.F_DIEM_HS">
+            <End Role="HOCSINH" EntitySet="HOCSINHs" />
+            <End Role="DIEMSO" EntitySet="DIEMSOes" />
+          </AssociationSet>
+          <AssociationSet Name="F_DIEM_LOP" Association="QL_HOCSINH_THPTModel.F_DIEM_LOP">
+            <End Role="LOP" EntitySet="LOPs" />
+            <End Role="DIEMSO" EntitySet="DIEMSOes" />
+          </AssociationSet>
+          <AssociationSet Name="F_DIEM_MH" Association="QL_HOCSINH_THPTModel.F_DIEM_MH">
+            <End Role="MONHOC" EntitySet="MONHOCs" />
+            <End Role="DIEMSO" EntitySet="DIEMSOes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DIEMSO_HOCKY" Association="QL_HOCSINH_THPTModel.FK_DIEMSO_HOCKY">
+            <End Role="HOCKY" EntitySet="HOCKies" />
+            <End Role="DIEMSO" EntitySet="DIEMSOes" />
+          </AssociationSet>
+          <AssociationSet Name="F_KETQUAHOCKY_HS" Association="QL_HOCSINH_THPTModel.F_KETQUAHOCKY_HS">
+            <End Role="HOCSINH" EntitySet="HOCSINHs" />
+            <End Role="KETQUAHOCKY" EntitySet="KETQUAHOCKies" />
+          </AssociationSet>
+          <AssociationSet Name="F_KETQUAHOCKY_LOP" Association="QL_HOCSINH_THPTModel.F_KETQUAHOCKY_LOP">
+            <End Role="LOP" EntitySet="LOPs" />
+            <End Role="KETQUAHOCKY" EntitySet="KETQUAHOCKies" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="DIEMSO">
+          <Key>
+            <PropertyRef Name="MAHOCSINH" />
+            <PropertyRef Name="MAMONHOC" />
+            <PropertyRef Name="MAHOCKY" />
+            <PropertyRef Name="MALOP" />
+          </Key>
+          <Property Name="MAHOCSINH" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="MAMONHOC" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="MAHOCKY" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="MALOP" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DIEMKTMIENG" Type="Double" />
+          <Property Name="DIEMKT15PH" Type="Double" />
+          <Property Name="DIEMKT45P" Type="Double" />
+          <Property Name="DIEMTHICUOIKY" Type="Double" />
+          <Property Name="DTB" Type="Double" />
+          <NavigationProperty Name="HOCSINH" Relationship="QL_HOCSINH_THPTModel.F_DIEM_HS" FromRole="DIEMSO" ToRole="HOCSINH" />
+          <NavigationProperty Name="LOP" Relationship="QL_HOCSINH_THPTModel.F_DIEM_LOP" FromRole="DIEMSO" ToRole="LOP" />
+          <NavigationProperty Name="MONHOC" Relationship="QL_HOCSINH_THPTModel.F_DIEM_MH" FromRole="DIEMSO" ToRole="MONHOC" />
+          <NavigationProperty Name="HOCKY" Relationship="QL_HOCSINH_THPTModel.FK_DIEMSO_HOCKY" FromRole="DIEMSO" ToRole="HOCKY" />
+        </EntityType>
+        <EntityType Name="KETQUAHOCKY">
+          <Key>
+            <PropertyRef Name="MAHOCSINH" />
+            <PropertyRef Name="MAHOCKY" />
+            <PropertyRef Name="MALOP" />
+          </Key>
+          <Property Name="MAHOCSINH" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="MAHOCKY" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="MALOP" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DTB" Type="Double" />
+          <NavigationProperty Name="HOCSINH" Relationship="QL_HOCSINH_THPTModel.F_KETQUAHOCKY_HS" FromRole="KETQUAHOCKY" ToRole="HOCSINH" />
+          <NavigationProperty Name="LOP" Relationship="QL_HOCSINH_THPTModel.F_KETQUAHOCKY_LOP" FromRole="KETQUAHOCKY" ToRole="LOP" />
+        </EntityType>
+        <Association Name="F_DIEM_HS">
+          <End Type="QL_HOCSINH_THPTModel.HOCSINH" Role="HOCSINH" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="QL_HOCSINH_THPTModel.DIEMSO" Role="DIEMSO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HOCSINH">
+              <PropertyRef Name="MAHOCSINH" />
+            </Principal>
+            <Dependent Role="DIEMSO">
+              <PropertyRef Name="MAHOCSINH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="F_DIEM_LOP">
+          <End Type="QL_HOCSINH_THPTModel.LOP" Role="LOP" Multiplicity="1" />
+          <End Type="QL_HOCSINH_THPTModel.DIEMSO" Role="DIEMSO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOP">
+              <PropertyRef Name="MALOP" />
+            </Principal>
+            <Dependent Role="DIEMSO">
+              <PropertyRef Name="MALOP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="F_DIEM_MH">
+          <End Type="QL_HOCSINH_THPTModel.MONHOC" Role="MONHOC" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="QL_HOCSINH_THPTModel.DIEMSO" Role="DIEMSO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MONHOC">
+              <PropertyRef Name="MAMONHOC" />
+            </Principal>
+            <Dependent Role="DIEMSO">
+              <PropertyRef Name="MAMONHOC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DIEMSO_HOCKY">
+          <End Type="QL_HOCSINH_THPTModel.HOCKY" Role="HOCKY" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="QL_HOCSINH_THPTModel.DIEMSO" Role="DIEMSO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HOCKY">
+              <PropertyRef Name="MAHOCKY" />
+            </Principal>
+            <Dependent Role="DIEMSO">
+              <PropertyRef Name="MAHOCKY" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="F_KETQUAHOCKY_HS">
+          <End Type="QL_HOCSINH_THPTModel.HOCSINH" Role="HOCSINH" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="QL_HOCSINH_THPTModel.KETQUAHOCKY" Role="KETQUAHOCKY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HOCSINH">
+              <PropertyRef Name="MAHOCSINH" />
+            </Principal>
+            <Dependent Role="KETQUAHOCKY">
+              <PropertyRef Name="MAHOCSINH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="F_KETQUAHOCKY_LOP">
+          <End Type="QL_HOCSINH_THPTModel.LOP" Role="LOP" Multiplicity="1" />
+          <End Type="QL_HOCSINH_THPTModel.KETQUAHOCKY" Role="KETQUAHOCKY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOP">
+              <PropertyRef Name="MALOP" />
+            </Principal>
+            <Dependent Role="KETQUAHOCKY">
+              <PropertyRef Name="MALOP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="QL_HOCSINH_THPTModelStoreContainer" CdmEntityContainer="QL_HOCSINH_THPTEntities">
+          <EntitySetMapping Name="DANTOCs">
+            <EntityTypeMapping TypeName="QL_HOCSINH_THPTModel.DANTOC">
+              <MappingFragment StoreEntitySet="DANTOC">
+                <ScalarProperty Name="MADANTOC" ColumnName="MADANTOC" />
+                <ScalarProperty Name="TENDANTOC" ColumnName="TENDANTOC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GIAOVIENs">
+            <EntityTypeMapping TypeName="QL_HOCSINH_THPTModel.GIAOVIEN">
+              <MappingFragment StoreEntitySet="GIAOVIEN">
+                <ScalarProperty Name="MAGIAOVIEN" ColumnName="MAGIAOVIEN" />
+                <ScalarProperty Name="TENGIAOVIEN" ColumnName="TENGIAOVIEN" />
+                <ScalarProperty Name="MAGIOITINH" ColumnName="MAGIOITINH" />
+                <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+                <ScalarProperty Name="DIENTHOAI" ColumnName="DIENTHOAI" />
+                <ScalarProperty Name="MAMONHOC" ColumnName="MAMONHOC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GIOITINHs">
+            <EntityTypeMapping TypeName="QL_HOCSINH_THPTModel.GIOITINH">
+              <MappingFragment StoreEntitySet="GIOITINH">
+                <ScalarProperty Name="MAGIOITINH" ColumnName="MAGIOITINH" />
+                <ScalarProperty Name="TENGIOITINH" ColumnName="TENGIOITINH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HANHKIEMs">
+            <EntityTypeMapping TypeName="QL_HOCSINH_THPTModel.HANHKIEM">
+              <MappingFragment StoreEntitySet="HANHKIEM">
+                <ScalarProperty Name="MAHANHKIEM" ColumnName="MAHANHKIEM" />
+                <ScalarProperty Name="TENHANHKIEM" ColumnName="TENHANHKIEM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HOCKies">
+            <EntityTypeMapping TypeName="QL_HOCSINH_THPTModel.HOCKY">
+              <MappingFragment StoreEntitySet="HOCKY">
+                <ScalarProperty Name="MAHOCKY" ColumnName="MAHOCKY" />
+                <ScalarProperty Name="TENHOCKY" ColumnName="TENHOCKY" />
+                <ScalarProperty Name="HESO" ColumnName="HESO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HOCLUCs">
+            <EntityTypeMapping TypeName="QL_HOCSINH_THPTModel.HOCLUC">
+              <MappingFragment StoreEntitySet="HOCLUC">
+                <ScalarProperty Name="MAHOCLUC" ColumnName="MAHOCLUC" />
+                <ScalarProperty Name="TENHOCLUC" ColumnName="TENHOCLUC" />
+                <ScalarProperty Name="DIEMCANDUOI" ColumnName="DIEMCANDUOI" />
+                <ScalarProperty Name="DIEMCANTREN" ColumnName="DIEMCANTREN" />
+                <ScalarProperty Name="DIEMKHONGCHE" ColumnName="DIEMKHONGCHE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HOCSINHs">
+            <EntityTypeMapping TypeName="QL_HOCSINH_THPTModel.HOCSINH">
+              <MappingFragment StoreEntitySet="HOCSINH">
+                <ScalarProperty Name="MAHOCSINH" ColumnName="MAHOCSINH" />
+                <ScalarProperty Name="HOTENHOCSINH" ColumnName="HOTENHOCSINH" />
+                <ScalarProperty Name="MAGIOITINH" ColumnName="MAGIOITINH" />
+                <ScalarProperty Name="NGAYSINH" ColumnName="NGAYSINH" />
+                <ScalarProperty Name="NOISINH" ColumnName="NOISINH" />
+                <ScalarProperty Name="MADANTOC" ColumnName="MADANTOC" />
+                <ScalarProperty Name="MATONGIAO" ColumnName="MATONGIAO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KETQUAs">
+            <EntityTypeMapping TypeName="QL_HOCSINH_THPTModel.KETQUA">
+              <MappingFragment StoreEntitySet="KETQUA">
+                <ScalarProperty Name="MAKETQUA" ColumnName="MAKETQUA" />
+                <ScalarProperty Name="TENKETQUA" ColumnName="TENKETQUA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KHOILOPs">
+            <EntityTypeMapping TypeName="QL_HOCSINH_THPTModel.KHOILOP">
+              <MappingFragment StoreEntitySet="KHOILOP">
+                <ScalarProperty Name="MAKHOI" ColumnName="MAKHOI" />
+                <ScalarProperty Name="TENKHOILOP" ColumnName="TENKHOILOP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOAINGUOIDUNGs">
+            <EntityTypeMapping TypeName="QL_HOCSINH_THPTModel.LOAINGUOIDUNG">
+              <MappingFragment StoreEntitySet="LOAINGUOIDUNG">
+                <ScalarProperty Name="MALOAIND" ColumnName="MALOAIND" />
+                <ScalarProperty Name="TENLOAIND" ColumnName="TENLOAIND" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOPs">
+            <EntityTypeMapping TypeName="QL_HOCSINH_THPTModel.LOP">
+              <MappingFragment StoreEntitySet="LOP">
+                <ScalarProperty Name="MALOP" ColumnName="MALOP" />
+                <ScalarProperty Name="TENLOP" ColumnName="TENLOP" />
+                <ScalarProperty Name="MAKHOI" ColumnName="MAKHOI" />
+                <ScalarProperty Name="MANAMHOC" ColumnName="MANAMHOC" />
+                <ScalarProperty Name="SISO" ColumnName="SISO" />
+                <ScalarProperty Name="MAGIAOVIENCHUNHIEM" ColumnName="MAGIAOVIENCHUNHIEM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MONHOCs">
+            <EntityTypeMapping TypeName="QL_HOCSINH_THPTModel.MONHOC">
+              <MappingFragment StoreEntitySet="MONHOC">
+                <ScalarProperty Name="MAMONHOC" ColumnName="MAMONHOC" />
+                <ScalarProperty Name="TENMONHOC" ColumnName="TENMONHOC" />
+                <ScalarProperty Name="SOTIET" ColumnName="SOTIET" />
+                <ScalarProperty Name="HESO" ColumnName="HESO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NAMHOCs">
+            <EntityTypeMapping TypeName="QL_HOCSINH_THPTModel.NAMHOC">
+              <MappingFragment StoreEntitySet="NAMHOC">
+                <ScalarProperty Name="MANAMHOC" ColumnName="MANAMHOC" />
+                <ScalarProperty Name="TENNAMHOC" ColumnName="TENNAMHOC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NGUOIDUNGs">
+            <EntityTypeMapping TypeName="QL_HOCSINH_THPTModel.NGUOIDUNG">
+              <MappingFragment StoreEntitySet="NGUOIDUNG">
+                <ScalarProperty Name="MANGUOIDUNG" ColumnName="MANGUOIDUNG" />
+                <ScalarProperty Name="MALOAIND" ColumnName="MALOAIND" />
+                <ScalarProperty Name="TENDANGNHAP" ColumnName="TENDANGNHAP" />
+                <ScalarProperty Name="MATKHAU" ColumnName="MATKHAU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PHANCONGs">
+            <EntityTypeMapping TypeName="QL_HOCSINH_THPTModel.PHANCONG">
+              <MappingFragment StoreEntitySet="PHANCONG">
+                <ScalarProperty Name="STT" ColumnName="STT" />
+                <ScalarProperty Name="MANAMHOC" ColumnName="MANAMHOC" />
+                <ScalarProperty Name="MALOP" ColumnName="MALOP" />
+                <ScalarProperty Name="MAMONHOC" ColumnName="MAMONHOC" />
+                <ScalarProperty Name="MAGIAOVIEN" ColumnName="MAGIAOVIEN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PHANLOPs">
+            <EntityTypeMapping TypeName="QL_HOCSINH_THPTModel.PHANLOP">
+              <MappingFragment StoreEntitySet="PHANLOP">
+                <ScalarProperty Name="STT" ColumnName="STT" />
+                <ScalarProperty Name="MANAMHOC" ColumnName="MANAMHOC" />
+                <ScalarProperty Name="MALOP" ColumnName="MALOP" />
+                <ScalarProperty Name="MAHOCSINH" ColumnName="MAHOCSINH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="QL_HOCSINH_THPTModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TONGIAOs">
+            <EntityTypeMapping TypeName="QL_HOCSINH_THPTModel.TONGIAO">
+              <MappingFragment StoreEntitySet="TONGIAO">
+                <ScalarProperty Name="MATONGIAO" ColumnName="MATONGIAO" />
+                <ScalarProperty Name="TENTONGIAO" ColumnName="TENTONGIAO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DIEMSOes">
+            <EntityTypeMapping TypeName="QL_HOCSINH_THPTModel.DIEMSO">
+              <MappingFragment StoreEntitySet="DIEMSO">
+                <ScalarProperty Name="DTB" ColumnName="DTB" />
+                <ScalarProperty Name="DIEMTHICUOIKY" ColumnName="DIEMTHICUOIKY" />
+                <ScalarProperty Name="DIEMKT45P" ColumnName="DIEMKT45P" />
+                <ScalarProperty Name="DIEMKT15PH" ColumnName="DIEMKT15PH" />
+                <ScalarProperty Name="DIEMKTMIENG" ColumnName="DIEMKTMIENG" />
+                <ScalarProperty Name="MALOP" ColumnName="MALOP" />
+                <ScalarProperty Name="MAHOCKY" ColumnName="MAHOCKY" />
+                <ScalarProperty Name="MAMONHOC" ColumnName="MAMONHOC" />
+                <ScalarProperty Name="MAHOCSINH" ColumnName="MAHOCSINH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KETQUAHOCKies">
+            <EntityTypeMapping TypeName="QL_HOCSINH_THPTModel.KETQUAHOCKY">
+              <MappingFragment StoreEntitySet="KETQUAHOCKY">
+                <ScalarProperty Name="DTB" ColumnName="DTB" />
+                <ScalarProperty Name="MALOP" ColumnName="MALOP" />
+                <ScalarProperty Name="MAHOCKY" ColumnName="MAHOCKY" />
+                <ScalarProperty Name="MAHOCSINH" ColumnName="MAHOCSINH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

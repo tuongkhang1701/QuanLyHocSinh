@@ -1,0 +1,105 @@
+﻿@model QuanLyHocSinhTHPT.Models.PHANLOP
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Xóa</h2>
+
+<h3>Bạn có muốn xóa không?</h3>
+
+<div>
+    <h1 class="header">PHÂN LỚP</h1>
+    <hr />
+    <dl class="dl-horizontal">
+        <div class="dl-control">
+            <dt>
+                @Html.DisplayNameFor(model => model.HOCSINH.HOTENHOCSINH)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.HOCSINH.HOTENHOCSINH)
+            </dd>
+        </div>
+
+        <div class="dl-control">
+            <dt>
+                @Html.DisplayNameFor(model => model.LOP.TENLOP)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.LOP.TENLOP)
+            </dd>
+        </div>
+
+        <div class="dl-control">
+            <dt>
+                @Html.DisplayNameFor(model => model.NAMHOC.TENNAMHOC)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NAMHOC.TENNAMHOC)
+            </dd>
+        </div>
+    </dl>
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Delete" class="btn btn-default" />
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+}
+
+@*<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>PHANLOP</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.HOCSINH.HOTENHOCSINH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HOCSINH.HOTENHOCSINH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LOP.TENLOP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LOP.TENLOP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LOP1.TENLOP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LOP1.TENLOP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NAMHOC.TENNAMHOC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NAMHOC.TENNAMHOC)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>*@

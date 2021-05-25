@@ -1,0 +1,229 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QLHS</title>
+    <link rel="stylesheet" href="@Url.Content("~/Content/css/toggle.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/css/header.css")">
+    <link href="~/Content/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+</head>
+
+<body>
+    <header>
+        <a href="#" class="logo"><img src="@Url.Content("~/Content/images/logo01.png")"></a>
+        <ul class="header-navigation">
+
+            <li>
+                <a href="#">
+
+                    <span class="title">Xin chào: @Session["userName"] </span>
+                </a>
+            </li>
+
+            <li>
+                <a href="@Url.Action("Logout")">
+                    <span class="icon"><i class="fas fa-sign-out-alt    "></i></span>
+                    <span class="title">Sign Out</span>
+                </a>
+            </li>
+        </ul>
+    </header>
+
+    <section class="section-toggle">
+        <div class="navigation">
+            <ul>
+                @if (User.IsInRole("giaovu"))
+                {                   
+                    <li>
+                        <div class="item">
+                            <label for="checkbox-toggle-what-we-do-1" class="collapse-title">
+                                <span class="icon"><i class="fas fa-user    "></i></span>
+                                <span class="title">Lập danh sách lớp</span>
+                            </label>
+                            <input type="checkbox" id="checkbox-toggle-what-we-do-1">
+                            <div class="collapse-content">
+                                <div>
+                                    @Html.ActionLink("Tạo danh sách lớp", "Create", "PHANLOPs")
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item">
+                            <label for="checkbox-toggle-what-we-do-2" class="collapse-title">
+                                <span class="icon"><i class="fas fa-user    "></i></span>
+                                <span class="title">Phân công</span>
+                            </label>
+                            <input type="checkbox" id="checkbox-toggle-what-we-do-2">
+                            <div class="collapse-content">
+                                <div>
+                                    @Html.ActionLink("Tạo lịch phân công", "Create", "PHANCONGs")
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item">
+                            <label for="checkbox-toggle-what-we-do-3" class="collapse-title">
+                                <span class="icon"><i class="fas fa-user    "></i></span>
+                                <span class="title">Lịch phân công</span>
+                            </label>
+                            <input type="checkbox" id="checkbox-toggle-what-we-do-3">
+                            <div class="collapse-content">
+                                <div>
+                                    @Html.ActionLink("Lịch phân công", "Index", "PHANCONGs")
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item">
+                            <label for="checkbox-toggle-what-we-do-4" class="collapse-title">
+                                <span class="icon"><i class="fas fa-user    "></i></span>
+                                <span class="title">Nhập điểm học sinh</span>
+                            </label>
+                            <input type="checkbox" id="checkbox-toggle-what-we-do-4">
+                            <div class="collapse-content">
+                                <div>
+                                    @Html.ActionLink("Nhập điểm", "Create", "DIEMSOes")
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item">
+                            <label for="checkbox-toggle-what-we-do-6" class="collapse-title">
+                                <span class="icon"><i class="fas fa-user    "></i></span>
+                                <span class="title">Xem điểm học sinh</span>
+                            </label>
+                            <input type="checkbox" id="checkbox-toggle-what-we-do-6">
+                            <div class="collapse-content">
+                                <div>
+                                    @Html.ActionLink("Danh sách Điểm", "Index", "DIEMSOes")
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item">
+                            <label for="checkbox-toggle-what-we-do-7" class="collapse-title">
+                                <span class="icon"><i class="fas fa-user    "></i></span>
+                                <span class="title">Xem danh sách</span>
+                            </label>
+                            <input type="checkbox" id="checkbox-toggle-what-we-do-7">
+                            <div class="collapse-content">
+                                <div>
+                                    @Html.ActionLink("Danh sách giáo viên", "Index", "GIAOVIENs")
+                                    @Html.ActionLink("Danh sách học sinh", "Index", "HOCSINHs")
+                                    @Html.ActionLink("Danh sách lớp", "Index", "PHANLOPs")
+                                    @Html.ActionLink("Tìm kiếm từ danh sách lớp", "searchFunction", "PHANLOPs")
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item">
+                            <label for="checkbox-toggle-what-we-do-8" class="collapse-title">
+                                <span class="icon"><i class="fas fa-user    "></i></span>
+                                <span class="title">Thêm</span>
+                            </label>
+                            <input type="checkbox" id="checkbox-toggle-what-we-do-8">
+                            <div class="collapse-content">
+                                <div>
+                                    @Html.ActionLink("Thêm học sinh", "Create", "HOCSINHs")
+                                    @Html.ActionLink("Thêm giáo viên", "Create", "GIAOVIENs")
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                }
+                @if (User.IsInRole("giaovien"))
+                {
+                    
+                    <li>
+                        <div class="item">
+                            <label for="checkbox-toggle-what-we-do-1" class="collapse-title">
+                                <span class="icon"><i class="fas fa-user    "></i></span>
+                                <span class="title">Xem danh sách</span>
+                            </label>
+                            <input type="checkbox" id="checkbox-toggle-what-we-do-1">
+                            <div class="collapse-content">
+                                <div>             
+                                    @Html.ActionLink("Danh sách lớp", "Index", "PHANLOPs")
+                                    @Html.ActionLink("Tìm kiếm từ danh sách lớp", "searchFunction", "PHANLOPs")
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item">
+                            <label for="checkbox-toggle-what-we-do-6" class="collapse-title">
+                                <span class="icon"><i class="fas fa-user    "></i></span>
+                                <span class="title">Xem điểm học sinh</span>
+                            </label>
+                            <input type="checkbox" id="checkbox-toggle-what-we-do-6">
+                            <div class="collapse-content">
+                                <div>
+                                    @Html.ActionLink("Điểm", "Index", "DIEMSOes")
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item">
+                            <label for="checkbox-toggle-what-we-do-4" class="collapse-title">
+                                <span class="icon"><i class="fas fa-user    "></i></span>
+                                <span class="title">Nhập điểm học sinh</span>
+                            </label>
+                            <input type="checkbox" id="checkbox-toggle-what-we-do-4">
+                            <div class="collapse-content">
+                                <div>
+                                    @Html.ActionLink("Nhập điểm", "Create", "DIEMSOes")
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item">
+                            <label for="checkbox-toggle-what-we-do-3" class="collapse-title">
+                                <span class="icon"><i class="fas fa-user    "></i></span>
+                                <span class="title">Lịch phân công</span>
+                            </label>
+                            <input type="checkbox" id="checkbox-toggle-what-we-do-3">
+                            <div class="collapse-content">
+                                <div>
+                                    @Html.ActionLink("Lịch phân công", "Index", "PHANCONGs")
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                   
+                }
+            </ul>
+
+        </div>
+        <div id="toggle"></div>
+
+        <div class="main">
+            <div class="details">
+                <div class="list-data">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <script src="~/Scripts/jquery-3.6.0.min.js"></script>
+    <script src="~/Scripts/moment.min.js"></script>
+    <script src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
+
+
+    @RenderSection("Scripts", required: false);
+    @*<script src="../Scripts/js/main.js"></script>*@
+</body>
+
+</html>

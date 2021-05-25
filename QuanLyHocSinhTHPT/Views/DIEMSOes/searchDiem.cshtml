@@ -1,0 +1,205 @@
+﻿@*@model IEnumerable<QuanLyHocSinhTHPT.Models.DIEMSO>*@
+@using PagedList;  
+@using PagedList.Mvc;  
+@model IPagedList<QuanLyHocSinhTHPT.Models.DIEMSO>  
+@{
+    ViewBag.Title = "searchDiem";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>    
+    ul.pagination    
+    {    
+        display: inline-block;    
+        padding: 0;    
+        margin:0;
+        margin-left: 10px;
+    }    
+    
+    ul.pagination li    
+    {    
+        display: inline;    
+    }    
+    
+        ul.pagination li a    
+        {    
+            color: black;    
+            float: left;    
+            padding: 8px 16px;    
+            text-decoration: none;    
+            transition: background-color .3s;    
+        }    
+    
+            ul.pagination li a.active    
+            {    
+                background-color: #4CAF50;    
+                color: white;    
+            }    
+    
+            ul.pagination li a:hover:not(.active)    
+            {    
+                background-color: #ddd;    
+            }    
+</style> 
+@using (Html.BeginForm("searchDiem", "DIEMSOes", FormMethod.Get, new { @style = "display: flex;justify-content: center;align-items: center"}))
+    {  
+    <b style="position:absolute; left: 0;"> TÌM KIẾM THEO: </b>
+    @Html.RadioButton("option", "Name", new{@style = "position:absolute; left: 165px"})<p style="position:absolute; left: 135px">Tên</p>
+    @Html.RadioButton("option", "Class", new{@style = "position:absolute; left: 365px"})<p style="position:absolute; left: 335px"> Lớp </p>  
+    @Html.RadioButton("option", "Object", new{@style = "position:absolute; left: 515px"})<p style="position:absolute; left: 535px">Môn học</p>
+    @Html.RadioButton("option", "Term", new{@style = "position:absolute; left: 700px"})<p style="position:absolute; left: 735px">Học kỳ</p>
+    @Html.TextBox("search", "", new{@style = "position:absolute; right: 110px;width: 350px;padding: 10px 20px;border-radius: 10px;outline: none;"})<input type = "submit" name = "TÌM KIẾM" style="position:absolute; right: 0;padding: 10px 26px;border-radius: 10px;background-color: dodgerblue;color:whitesmoke; cursor:pointer" id="btnSearch"/><i class="fas fa-search" style="position: absolute; right: 0;margin-right: 70px;color:whitesmoke"></i>
+    }
+<h2 style="width: 150px; margin: auto">TÌM KIẾM</h2>
+<table>
+    <thead>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.First().HOCSINH.HOTENHOCSINH)</td>
+            <td>@Html.DisplayNameFor(model => model.First().LOP.TENLOP)</td>
+            <td>@Html.DisplayNameFor(model => model.First().MONHOC.TENMONHOC)</td>
+            <td>@Html.DisplayNameFor(model => model.First().HOCKY.TENHOCKY)</td>
+            <td>@Html.DisplayNameFor(model => model.First().DIEMKTMIENG)</td>
+            <td>@Html.DisplayNameFor(model => model.First().DIEMKT15PH)</td>
+            <td>@Html.DisplayNameFor(model => model.First().DIEMKT45P)</td>
+            <td>@Html.DisplayNameFor(model => model.First().DIEMTHICUOIKY)</td>
+            <td>@Html.DisplayNameFor(model => model.First().DTB)</td>
+            <td>Tùy chọn</td>
+        </tr>
+    </thead>
+    <tbody>
+        @if(Model.Count() == 0){
+            <tr>
+                <td colspan="10" style="color: red">
+                Không tìm thấy
+                </td>
+            </tr>
+        }
+        else{
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HOCSINH.HOTENHOCSINH)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LOP.TENLOP)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MONHOC.TENMONHOC)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HOCKY.TENHOCKY)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DIEMKTMIENG)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DIEMKT15PH)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DIEMKT45P)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DIEMTHICUOIKY)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DTB)
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Edit", new { maHocSinh = item.MAHOCSINH, maMonHoc = item.MAMONHOC, maHocKy = item.MAHOCKY, maLop = item.MALOP })"><i class="fas fa-edit"></i> Sửa</a>
+                        <a href="@Url.Action("Details", new { maHocSinh = item.MAHOCSINH, maMonHoc = item.MAMONHOC, maHocKy = item.MAHOCKY, maLop = item.MALOP })"><i class="fas fa-info-circle"></i> Chi tiết</a>
+                        <a href="@Url.Action("Delete",new { maHocSinh = item.MAHOCSINH, maMonHoc = item.MAMONHOC, maHocKy = item.MAHOCKY, maLop = item.MALOP })"><i class="fas fa-trash"></i> Xóa</a>
+                    </td>
+                </tr>
+            }
+        }
+        
+    </tbody>
+</table>
+<div id="container">
+    <div class="pagination" style="width: 300px; margin: auto;"> 
+         <center>
+                            Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)    
+            of @Model.PageCount 
+                 @Html.PagedListPager(Model,pageNumber => Url.Action("searchDiem",new{ pageNumber }))
+         </center> 
+    </div>   
+</div>
+
+@section Scripts {
+    <script type="text/javascript" src="../Scripts/js/main.js"></script>
+}
+@*<h2>searchDiem</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DIEMKTMIENG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DIEMKT15PH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DIEMKT45P)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DIEMTHICUOIKY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DTB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HOCSINH.HOTENHOCSINH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LOP.TENLOP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MONHOC.TENMONHOC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HOCKY.TENHOCKY)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DIEMKTMIENG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DIEMKT15PH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DIEMKT45P)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DIEMTHICUOIKY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DTB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HOCSINH.HOTENHOCSINH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LOP.TENLOP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MONHOC.TENMONHOC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HOCKY.TENHOCKY)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>*@

@@ -1,0 +1,79 @@
+﻿@model QuanLyHocSinhTHPT.Models.HOCSINH
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.AntiForgeryToken()
+<div>
+    <h1 class="header">HỌC SINH</h1>
+    <hr />
+    <dl class="dl-horizontal">
+        <div class="dl-control">
+            <dt>
+                @Html.DisplayNameFor(model => model.HOTENHOCSINH)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.HOTENHOCSINH)
+            </dd>
+        </div>
+
+        <div class="dl-control">
+            <dt>
+                @Html.DisplayNameFor(model => model.NGAYSINH)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NGAYSINH)
+            </dd>
+        </div>
+
+        <div class="dl-control">
+            <dt>
+                @Html.DisplayNameFor(model => model.NOISINH)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NOISINH)
+            </dd>
+        </div>
+        <div class="dl-control">
+            <dt>
+                @Html.DisplayNameFor(model => model.DANTOC.TENDANTOC)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DANTOC.TENDANTOC)
+            </dd>
+        </div>
+
+        <div class="dl-control">
+            <dt>
+                @Html.DisplayNameFor(model => model.GIOITINH.TENGIOITINH)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.GIOITINH.TENGIOITINH)
+            </dd>
+        </div>
+
+        <div class="dl-control">
+            <dt>
+                @Html.DisplayNameFor(model => model.TONGIAO.TENTONGIAO)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TONGIAO.TENTONGIAO)
+            </dd>
+        </div>
+
+    </dl>
+</div>
+<p class="dl-action">
+    <a href="@Url.Action("Edit", new { id = Model.MAHOCSINH })"><i class="fas fa-edit"></i> Sửa</a>
+    <a href="@Url.Action("Index")"><i class="fas fa-backward"></i> Quay lại</a>
+</p>
+
+

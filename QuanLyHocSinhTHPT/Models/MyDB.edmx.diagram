@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9aec6aeb97cb4647b30d31c4e7fc8b9c" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="QL_HOCSINH_THPTModel.DANTOC" Width="1.5" PointX="3.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_HOCSINH_THPTModel.GIAOVIEN" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_HOCSINH_THPTModel.GIOITINH" Width="1.5" PointX="1.5" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_HOCSINH_THPTModel.HANHKIEM" Width="1.5" PointX="8.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_HOCSINH_THPTModel.HOCKY" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_HOCSINH_THPTModel.HOCLUC" Width="1.5" PointX="10.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_HOCSINH_THPTModel.HOCSINH" Width="1.5" PointX="6" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_HOCSINH_THPTModel.KETQUA" Width="1.5" PointX="10.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_HOCSINH_THPTModel.KHOILOP" Width="1.5" PointX="0.75" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_HOCSINH_THPTModel.LOAINGUOIDUNG" Width="1.5" PointX="8.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_HOCSINH_THPTModel.LOP" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_HOCSINH_THPTModel.MONHOC" Width="1.5" PointX="1.5" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_HOCSINH_THPTModel.NAMHOC" Width="1.5" PointX="0.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_HOCSINH_THPTModel.NGUOIDUNG" Width="1.5" PointX="11" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_HOCSINH_THPTModel.PHANCONG" Width="1.5" PointX="5.25" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_HOCSINH_THPTModel.PHANLOP" Width="1.5" PointX="8.25" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_HOCSINH_THPTModel.sysdiagram" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_HOCSINH_THPTModel.TONGIAO" Width="1.5" PointX="3.75" PointY="10.5" IsExpanded="true" />
+        <AssociationConnector Association="QL_HOCSINH_THPTModel.FK_HS_DT" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_HOCSINH_THPTModel.F_GV_GT" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_HOCSINH_THPTModel.F_GV_MH" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_HOCSINH_THPTModel.F_LOP_GIAOVIEN" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_HOCSINH_THPTModel.P_PC_GIAOVIEN" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_HOCSINH_THPTModel.F_HS_GT" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_HOCSINH_THPTModel.F_HS_TG" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_HOCSINH_THPTModel.FK_PL_HS" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_HOCSINH_THPTModel.F_LOP_KHOILOP" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_HOCSINH_THPTModel.FK_NGUOIDUNG_LOAINGUOIDUNG" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_HOCSINH_THPTModel.F_LOP_NAMHOC" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_HOCSINH_THPTModel.FK_PHANLOP_LOP" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_HOCSINH_THPTModel.FK_PL_LOP" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_HOCSINH_THPTModel.P_PC_LOP" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_HOCSINH_THPTModel.P_PC_MONHOC" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_HOCSINH_THPTModel.Fk_PHANCONG_NAMHOC" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_HOCSINH_THPTModel.FK_PL_NAMHOC" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="QL_HOCSINH_THPTModel.DIEMSO" Width="1.5" PointX="14" PointY="9.5" />
+        <EntityTypeShape EntityType="QL_HOCSINH_THPTModel.KETQUAHOCKY" Width="1.5" PointX="13.25" PointY="6.25" />
+        <AssociationConnector Association="QL_HOCSINH_THPTModel.F_DIEM_HS" />
+        <AssociationConnector Association="QL_HOCSINH_THPTModel.F_DIEM_LOP" />
+        <AssociationConnector Association="QL_HOCSINH_THPTModel.F_DIEM_MH" />
+        <AssociationConnector Association="QL_HOCSINH_THPTModel.FK_DIEMSO_HOCKY" />
+        <AssociationConnector Association="QL_HOCSINH_THPTModel.F_KETQUAHOCKY_HS" />
+        <AssociationConnector Association="QL_HOCSINH_THPTModel.F_KETQUAHOCKY_LOP" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

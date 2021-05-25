@@ -1,0 +1,67 @@
+﻿@model QuanLyHocSinhTHPT.Models.HOCSINH
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Thêm</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <h1>HỌC SINH</h1>
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.MAHOCSINH)
+            @Html.EditorFor(model => model.MAHOCSINH)
+            @Html.ValidationMessageFor(model => model.MAHOCSINH, "", new { @style = "color:red;display: inline-block;padding-left: 150px; !important" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.HOTENHOCSINH)
+            @Html.EditorFor(model => model.HOTENHOCSINH)
+            @Html.ValidationMessageFor(model => model.HOTENHOCSINH, "", new { @style = "color:red;display: inline-block;padding-left: 150px; !important" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MAGIOITINH, "Giới tính")
+            @Html.DropDownList("MAGIOITINH", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.MAGIOITINH, "", new { @style = "color:red;display: inline-block;padding-left: 150px; !important" })
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NGAYSINH)
+            @Html.TextBoxFor(model => model.NGAYSINH, new { @type = "date", @class = "data-date='' data-date-format='DD MMMM YYYY'" })
+            @Html.ValidationMessageFor(model => model.NGAYSINH, "", new { @style = "color:red;display: inline-block;padding-left: 150px; !important" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NOISINH)
+            @Html.EditorFor(model => model.NOISINH, new { htmlAttributes = new { @style = "width: 350px;padding: 5px;float: right;" } })
+            @Html.ValidationMessageFor(model => model.NOISINH, "", new { @style = "color:red;display: inline-block;padding-left: 150px; !important" })
+        </div>
+
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MADANTOC, "Dân tộc")
+            @Html.DropDownList("MADANTOC", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.MADANTOC, "", new { @style = "color:red;display: inline-block;padding-left: 150px; !important" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MATONGIAO, "Tôn giáo")
+            @Html.DropDownList("MATONGIAO", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.MATONGIAO, "", new { @style = "color:red;display: inline-block;padding-left: 150px; !important" })
+        </div>
+        <div class="clr"></div>
+        <div class="form-group action">
+            <input type="submit" value="Tạo" class="btn btn-default" />
+            <a href="@Url.Action("Index")"><i class="fas fa-backward"></i> Quay lại</a>
+        </div>
+    </div>
+}
+
+

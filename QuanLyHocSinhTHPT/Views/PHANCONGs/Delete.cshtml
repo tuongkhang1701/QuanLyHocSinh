@@ -1,0 +1,65 @@
+﻿@model QuanLyHocSinhTHPT.Models.PHANCONG
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Xóa</h2>
+
+<h3>Bạn có muốn xóa không?</h3>
+
+<div>
+    <h1 class="header">PHÂN CÔNG</h1>
+    <hr />
+    <dl class="dl-horizontal">
+        <div class="dl-control">
+            <dt>
+                @Html.DisplayNameFor(model => model.GIAOVIEN.TENGIAOVIEN)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.GIAOVIEN.TENGIAOVIEN)
+            </dd>
+        </div>
+
+        <div class="dl-control">
+            <dt>
+                @Html.DisplayNameFor(model => model.LOP.TENLOP)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.LOP.TENLOP)
+            </dd>
+        </div>
+
+        <div class="dl-control">
+            <dt>
+                @Html.DisplayNameFor(model => model.MONHOC.TENMONHOC)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MONHOC.TENMONHOC)
+            </dd>
+        </div>
+        <div class="dl-control">
+            <dt>
+                @Html.DisplayNameFor(model => model.NAMHOC.TENNAMHOC)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NAMHOC.TENNAMHOC)
+            </dd>
+        </div>
+    </dl>
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Delete" class="btn btn-default" />
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+}

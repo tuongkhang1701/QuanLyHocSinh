@@ -1,0 +1,78 @@
+﻿@model QuanLyHocSinhTHPT.Models.GIAOVIEN
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Xóa</h2>
+
+<h3>Bạn có muốn xóa không?</h3>
+
+<div>
+    <h1 class="header">GIÁO VIÊN</h1>
+    <hr />
+    <dl class="dl-horizontal">
+        <div class="dl-control">
+            <dt>
+                @Html.DisplayNameFor(model => model.TENGIAOVIEN)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TENGIAOVIEN)
+            </dd>
+        </div>
+
+        <div class="dl-control">
+            <dt>
+                @Html.DisplayNameFor(model => model.DIACHI)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DIACHI)
+            </dd>
+        </div>
+
+        <div class="dl-control">
+            <dt>
+                @Html.DisplayNameFor(model => model.DIENTHOAI)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DIENTHOAI)
+            </dd>
+        </div>
+
+        <div class="dl-control">
+            <dt>
+                @Html.DisplayNameFor(model => model.GIOITINH.TENGIOITINH)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.GIOITINH.TENGIOITINH)
+            </dd>
+        </div>
+
+        <div class="dl-control">
+            <dt>
+                @Html.DisplayNameFor(model => model.MONHOC.TENMONHOC)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MONHOC.TENMONHOC)
+            </dd>
+        </div>
+
+
+    </dl>
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Delete" class="btn btn-default" />
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+}
+

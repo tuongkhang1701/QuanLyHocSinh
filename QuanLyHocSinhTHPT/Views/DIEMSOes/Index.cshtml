@@ -1,0 +1,67 @@
+﻿@model IEnumerable<QuanLyHocSinhTHPT.Models.DIEMSO>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table>
+    <thead>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.DIEMKTMIENG)</td>
+            <td>@Html.DisplayNameFor(model => model.DIEMKT15PH)</td>
+            <td>@Html.DisplayNameFor(model => model.DIEMKT45P)</td>
+            <td>@Html.DisplayNameFor(model => model.DIEMTHICUOIKY)</td>
+            <td>@Html.DisplayNameFor(model => model.DTB)</td>
+            <td>@Html.DisplayNameFor(model => model.HOCSINH.HOTENHOCSINH)</td>
+            <td>@Html.DisplayNameFor(model => model.LOP.TENLOP)</td>
+            <td>@Html.DisplayNameFor(model => model.MONHOC.TENMONHOC)</td>
+            <td>@Html.DisplayNameFor(model => model.HOCKY.TENHOCKY)</td>
+            <td>Tùy chọn</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DIEMKTMIENG)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DIEMKT15PH)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DIEMKT45P)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DIEMTHICUOIKY)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DTB)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOCSINH.HOTENHOCSINH)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LOP.TENLOP)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MONHOC.TENMONHOC)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOCKY.TENHOCKY)
+                </td>
+                <td>
+                    @*<a href="@Url.Action("Edit", new { maHocSinh = item.MAHOCSINH, maMonHoc = item.MAMONHOC, maHocKy = item.MAHOCKY, maLop = item.MALOP })"><i class="fas fa-edit"></i> Sửa</a>*@
+                    <a href="@Url.Action("Details", new { maHocSinh = item.MAHOCSINH, maMonHoc = item.MAMONHOC, maHocKy = item.MAHOCKY, maLop = item.MALOP })" style="background-color: rgb(11, 43, 148) !important;"><i class="fas fa-info-circle"></i> Chi tiết</a>
+                    <a href="@Url.Action("Delete", new { maHocSinh = item.MAHOCSINH, maMonHoc = item.MAMONHOC, maHocKy = item.MAHOCKY, maLop = item.MALOP })" style="background-color: rgb(253, 5, 5) !important"><i class="fas fa-trash"></i> Xóa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@section Scripts {
+    <script type="text/javascript" src="../Scripts/js/main.js"></script>
+}
+
+

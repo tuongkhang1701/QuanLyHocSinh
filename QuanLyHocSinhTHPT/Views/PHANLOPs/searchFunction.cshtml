@@ -1,0 +1,105 @@
+﻿@*@model IEnumerable<QuanLyHocSinhTHPT.Models.PHANLOP>*@
+@using PagedList;  
+@using PagedList.Mvc;  
+@model IPagedList<QuanLyHocSinhTHPT.Models.PHANLOP>  
+@{
+    ViewBag.Title = "searchFunction";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>    
+    ul.pagination    
+    {    
+        display: inline-block;    
+        padding: 0;    
+        margin:0;
+        margin-left: 10px;
+    }    
+    
+    ul.pagination li    
+    {    
+        display: inline;    
+    }    
+    
+        ul.pagination li a    
+        {    
+            color: black;    
+            float: left;    
+            padding: 8px 16px;    
+            text-decoration: none;    
+            transition: background-color .3s;    
+        }    
+    
+            ul.pagination li a.active    
+            {    
+                background-color: #4CAF50;    
+                color: white;    
+            }    
+    
+            ul.pagination li a:hover:not(.active)    
+            {    
+                background-color: #ddd;    
+            }    
+</style> 
+@using (Html.BeginForm("searchFunction", "PHANLOPs", FormMethod.Get, new { @style = "display: flex;justify-content: center;align-items: center"}))
+    {  
+    <b style="position:absolute; left: 0;"> TÌM KIẾM THEO: </b>
+    @Html.RadioButton("option", "Name", new{@style = "position:absolute; left: 200px"})<p style="position:absolute; left: 215px">Tên</p>
+    @Html.RadioButton("option", "Class", new{@style = "position:absolute; left: 400px"})<p style="position:absolute; left: 415px"> Lớp </p>  
+    @Html.RadioButton("option", "Year", new{@style = "position:absolute; left: 600px"})<p style="position:absolute; left: 615px">Năm học</p>
+    @Html.TextBox("search", "", new{@style = "position:absolute; right: 110px;width: 350px;padding: 10px 20px;border-radius: 10px;outline: none;"})<input type = "submit" name = "TÌM KIẾM" style="position:absolute; right: 0;padding: 10px 26px;border-radius: 10px;background-color: dodgerblue;color:whitesmoke; cursor:pointer" id="btnSearch"/><i class="fas fa-search" style="position: absolute; right: 0;margin-right: 70px;color:whitesmoke"></i>
+    }
+<h2 style="width: 150px; margin: auto">TÌM KIẾM</h2>
+<table>
+    <thead>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.First().HOCSINH.HOTENHOCSINH)</td>
+            <td>@Html.DisplayNameFor(model => model.First().LOP.TENLOP)</td>
+            <td>@Html.DisplayNameFor(model => model.First().NAMHOC.TENNAMHOC)</td>
+            <td>Tùy chọn</td>
+        </tr>
+    </thead>
+    <tbody>
+        @if(Model.Count() == 0){
+            <tr>
+                <td colspan="4" style="color: red">
+                Không tìm thấy
+                </td>
+            </tr>
+        }
+        else{
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HOCSINH.HOTENHOCSINH)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LOP.TENLOP)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NAMHOC.TENNAMHOC)
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Edit", new { id = item.STT })"><i class="fas fa-edit"></i> Sửa</a>
+                        <a href="@Url.Action("Details", new { id = item.STT })"><i class="fas fa-info-circle"></i> Chi tiết</a>
+                        <a href="@Url.Action("Delete", new { id = item.STT })"><i class="fas fa-trash"></i> Xóa</a>
+                    </td>
+                </tr>
+            }
+        }
+        
+    </tbody>
+</table>
+<div id="container">
+    <div class="pagination" style="width: 300px; margin: auto;"> 
+         <center>
+                            Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)    
+            of @Model.PageCount 
+                 @Html.PagedListPager(Model,pageNumber => Url.Action("searchFunction",new{ pageNumber }))
+         </center> 
+    </div>   
+</div>
+
+@section Scripts {
+    <script type="text/javascript" src="../Scripts/js/main.js"></script>
+}

@@ -1,0 +1,51 @@
+﻿@model IEnumerable<QuanLyHocSinhTHPT.Models.GIAOVIEN>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<table>
+    <thead>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.TENGIAOVIEN)</td>
+            <td>@Html.DisplayNameFor(model => model.DIACHI)</td>
+            <td>@Html.DisplayNameFor(model => model.DIENTHOAI)</td>
+            <td>@Html.DisplayNameFor(model => model.GIOITINH.TENGIOITINH)</td>
+            <td>@Html.DisplayNameFor(model => model.MONHOC.TENMONHOC)</td>
+
+            <td>Tùy chọn</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TENGIAOVIEN)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DIACHI)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DIENTHOAI)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GIOITINH.TENGIOITINH)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MONHOC.TENMONHOC)
+                </td>
+                <td>
+                    <a href="@Url.Action("Edit", new { id = item.MAGIAOVIEN })"><i class="fas fa-edit"></i> Sửa</a>
+                    <a href="@Url.Action("Details", new { id = item.MAGIAOVIEN })"><i class="fas fa-info-circle"></i> Chi tiết</a>
+                    <a href="@Url.Action("Delete", new { id = item.MAGIAOVIEN })"><i class="fas fa-trash"></i> Xóa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@section Scripts {
+    <script type="text/javascript" src="../Scripts/js/main.js"></script>
+}
+
+

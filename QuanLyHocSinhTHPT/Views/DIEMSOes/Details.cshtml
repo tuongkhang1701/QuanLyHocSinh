@@ -1,0 +1,189 @@
+﻿@model QuanLyHocSinhTHPT.Models.DIEMSO
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.AntiForgeryToken()
+<div>
+    <h1 class="header">ĐIỂM SỐ</h1>
+    <hr />
+    <dl class="dl-horizontal">
+        <div class="dl-control">
+            <dt>
+                @Html.DisplayNameFor(model => model.DIEMKTMIENG)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DIEMKTMIENG)
+            </dd>
+        </div>
+
+        <div class="dl-control">
+            <dt>
+                @Html.DisplayNameFor(model => model.DIEMKT15PH)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DIEMKT15PH)
+            </dd>
+        </div>
+
+        <div class="dl-control">
+            <dt>
+                @Html.DisplayNameFor(model => model.DIEMKT45P)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DIEMKT45P)
+            </dd>
+        </div>
+        <div class="dl-control">
+            <dt>
+                @Html.DisplayNameFor(model => model.DIEMTHICUOIKY)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DIEMTHICUOIKY)
+            </dd>
+        </div>
+
+        <div class="dl-control">
+            <dt>
+                @Html.DisplayNameFor(model => model.DTB)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DTB)
+            </dd>
+        </div>
+
+        <div class="dl-control">
+            <dt>
+                @Html.DisplayNameFor(model => model.HOCSINH.HOTENHOCSINH)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.HOCSINH.HOTENHOCSINH)
+            </dd>
+        </div>
+
+        <div class="dl-control">
+            <dt>
+                @Html.DisplayNameFor(model => model.LOP.TENLOP)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.LOP.TENLOP)
+            </dd>
+        </div>
+
+        <div class="dl-control">
+            <dt>
+                @Html.DisplayNameFor(model => model.MONHOC.TENMONHOC)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MONHOC.TENMONHOC)
+            </dd>
+        </div>
+        <div class="dl-control">
+            <dt>
+                @Html.DisplayNameFor(model => model.HOCKY.TENHOCKY)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.HOCKY.TENHOCKY)
+            </dd>
+        </div>
+
+    </dl>
+</div>
+<p class="dl-action">
+    @*<a href="@Url.Action("Edit", new { maHocSinh = Model.MAHOCSINH, maMonHoc = Model.MAMONHOC, maHocKy = Model.MAHOCKY, maLop = Model.MALOP })"><i class="fas fa-edit"></i> Sửa</a>*@
+    <a href="@Url.Action("Index")" style="margin-left: 380px;margin-top: 20px;"><i class="fas fa-backward"></i> Quay lại</a>
+</p>
+
+@*<div>
+    <h4>DIEMSO</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DIEMKTMIENG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DIEMKTMIENG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DIEMKT15PH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DIEMKT15PH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DIEMKT45P)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DIEMKT45P)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DIEMTHICUOIKY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DIEMTHICUOIKY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DTB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DTB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HOCSINH.HOTENHOCSINH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HOCSINH.HOTENHOCSINH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LOP.TENLOP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LOP.TENLOP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MONHOC.TENMONHOC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MONHOC.TENMONHOC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HOCKY.TENHOCKY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HOCKY.TENHOCKY)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>*@

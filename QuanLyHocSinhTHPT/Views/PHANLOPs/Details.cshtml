@@ -1,0 +1,49 @@
+﻿@model QuanLyHocSinhTHPT.Models.PHANLOP
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.AntiForgeryToken()
+<div>
+    <h1 class="header">PHÂN LỚP</h1>
+    <hr />
+    <dl class="dl-horizontal">
+        <div class="dl-control">
+            <dt>
+                @Html.DisplayNameFor(model => model.HOCSINH.HOTENHOCSINH)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.HOCSINH.HOTENHOCSINH)
+            </dd>
+        </div>
+
+        <div class="dl-control">
+            <dt>
+                @Html.DisplayNameFor(model => model.LOP.TENLOP)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.LOP.TENLOP)
+            </dd>
+        </div>
+
+        <div class="dl-control">
+            <dt>
+                @Html.DisplayNameFor(model => model.NAMHOC.TENNAMHOC)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NAMHOC.TENNAMHOC)
+            </dd>
+        </div>
+    </dl>
+</div>
+<p class="dl-action">
+    <a href="@Url.Action("Edit", new { id = Model.STT })"><i class="fas fa-edit"></i> Sửa</a>
+    <a href="@Url.Action("Index")"><i class="fas fa-backward"></i> Quay lại</a>
+</p>
+
+

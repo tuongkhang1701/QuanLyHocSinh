@@ -1,0 +1,69 @@
+﻿@model QuanLyHocSinhTHPT.Models.GIAOVIEN
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.AntiForgeryToken()
+<div>
+    <h1 class="header">GIÁO VIÊN</h1>
+    <hr />
+    <dl class="dl-horizontal">
+        <div class="dl-control">
+            <dt>
+                @Html.DisplayNameFor(model => model.TENGIAOVIEN)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TENGIAOVIEN)
+            </dd>
+        </div>
+
+        <div class="dl-control">
+            <dt>
+                @Html.DisplayNameFor(model => model.DIACHI)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DIACHI)
+            </dd>
+        </div>
+
+        <div class="dl-control">
+            <dt>
+                @Html.DisplayNameFor(model => model.DIENTHOAI)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DIENTHOAI)
+            </dd>
+        </div>
+        <div class="dl-control">
+            <dt>
+                @Html.DisplayNameFor(model => model.GIOITINH.TENGIOITINH)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.GIOITINH.TENGIOITINH)
+            </dd>
+        </div>
+
+        <div class="dl-control">
+            <dt>
+                @Html.DisplayNameFor(model => model.MONHOC.TENMONHOC)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MONHOC.TENMONHOC)
+            </dd>
+        </div>
+
+    </dl>
+</div>
+<p class="dl-action">
+    <a href="@Url.Action("Edit", new { id = Model.MAGIAOVIEN })"><i class="fas fa-edit"></i> Sửa</a>
+    <a href="@Url.Action("Index")"><i class="fas fa-backward"></i> Quay lại</a>
+</p>
+
+
